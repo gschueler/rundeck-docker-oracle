@@ -4,7 +4,8 @@ Using docker image https://hub.docker.com/r/alexeiled/docker-oracle-xe-11g/
 
     docker pull alexeiled/docker-oracle-xe-11g
     docker run -d \
-    	-v ./sql:/etc/entrypoint-initdb.d \
+    	-v $PWD/sql:/etc/entrypoint-initdb.d \
+    	-v $PWD/data:/usr/lib/oracle/xe/oradata/XE \
     	--shm-size=2g \
     	-p 1521:1521 \
     	-p 8080:8080 \
